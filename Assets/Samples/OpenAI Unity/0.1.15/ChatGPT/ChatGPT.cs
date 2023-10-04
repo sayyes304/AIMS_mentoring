@@ -6,7 +6,9 @@ namespace OpenAI
 {
     public class ChatGPT : MonoBehaviour
     {
-        [SerializeField] private InputField inputField;
+        // ✅ 수정한 내용 !!
+        // [SerializeField] private InputField inputField;
+        [SerializeField] private Text inputField;
         [SerializeField] private Button button;
         [SerializeField] private ScrollRect scroll;
         

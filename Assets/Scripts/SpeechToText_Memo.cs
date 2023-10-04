@@ -123,8 +123,9 @@ namespace Oculus.VoiceSDK.UX
             {
                 SetText(_promptDefault, _promptColor);
             }
-            GetComponent<TexttoSpeech>().readingEng.text = _label.text;
-            GetComponent<TexttoSpeech>().EngBtn();
+
+            //GetComponent<TexttoSpeech>().readingEng.text = _label.text;
+            //GetComponent<TexttoSpeech>().EngBtn();
 
         }
 
