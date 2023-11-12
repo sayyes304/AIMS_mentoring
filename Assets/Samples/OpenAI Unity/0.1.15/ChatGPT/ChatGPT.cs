@@ -6,9 +6,9 @@ namespace OpenAI
 {
     public class ChatGPT : MonoBehaviour
     {
-        // ✅ 수정한 내용 !!
-        // [SerializeField] private InputField inputField;
-        [SerializeField] private Text inputField;
+        // ✅ 수정한 내용 !! InputField --> Text
+        [SerializeField] private InputField inputField;
+        // [SerializeField] private Text inputField;
         [SerializeField] private Button button;
         [SerializeField] private ScrollRect scroll;
         
@@ -19,7 +19,7 @@ namespace OpenAI
         private OpenAIApi openai = new OpenAIApi();
 
         private List<ChatMessage> messages = new List<ChatMessage>();
-        private string prompt = "Act as a random stranger in a chat room and reply to the questions. Don't break character. Don't ever mention that you are an AI model.";
+        private string prompt = "모든 대답을 한 문장으로만 답해줘.";
 
         private void Start()
         {
@@ -39,6 +39,7 @@ namespace OpenAI
             scroll.content.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, height);
             scroll.verticalNormalizedPosition = 0;
 
+           
             // ✅ 추가한 내용 !!
             if (message.Role != "user")
             {
@@ -54,10 +55,12 @@ namespace OpenAI
                 Role = "user",
                 Content = inputField.text
             };
-            
+
             AppendMessage(newMessage);
 
-            if (messages.Count == 0) newMessage.Content = prompt + "\n" + inputField.text; 
+                  // ✅ 수정한 내용 !! 
+            // if (messages.Count == 0) newMessage.Content = prompt + "\n" + inputField.text; 
+            newMessage.Content = prompt + "\n" + inputField.text; 
             
             messages.Add(newMessage);
             
@@ -84,6 +87,7 @@ namespace OpenAI
             {
                 Debug.LogWarning("No text was generated from this prompt.");
             }
+
 
             button.enabled = true;
             inputField.enabled = true;

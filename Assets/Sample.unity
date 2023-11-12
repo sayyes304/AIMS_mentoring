@@ -527,7 +527,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 166289756}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dbde875e2702514fa850c0249380170, type: 3}
+  m_Script: {fileID: 11500000, guid: f9a53c2b33ccace4591d51c03873b88a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _voiceServices:
@@ -537,6 +537,8 @@ MonoBehaviour:
   _promptDefault: Press activate to begin listening
   _promptListening: Listening...
   _errorColor: {r: 0.8, g: 0.2, b: 0.2, a: 1}
+  isendtext: 0
+  activationButton: {fileID: 0}
 --- !u!1 &212795747
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,7 +843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83764466e83f8aa40b421e5af75b1b49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputField: {fileID: 1823270927}
+  inputField: {fileID: 1079664277}
   button: {fileID: 1920761190}
   scroll: {fileID: 356682880}
   sent: {fileID: 8660877164928630359, guid: 53cd26a6eefa5a74086203cd118a04d3, type: 3}
@@ -988,7 +990,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1079664276
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1618,7 +1620,7 @@ GameObject:
   - component: {fileID: 1823270925}
   - component: {fileID: 1823270928}
   - component: {fileID: 1823270927}
-  - component: {fileID: 1823270926}
+  - component: {fileID: 1823270929}
   m_Layer: 5
   m_Name: Transcription Text
   m_TagString: Untagged
@@ -1643,28 +1645,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.0975, y: 0}
+  m_AnchoredPosition: {x: 8.0975, y: -92}
   m_SizeDelta: {x: 746.905, y: 29}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1823270926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1823270924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dbde875e2702514fa850c0249380170, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _voiceServices:
-  - {fileID: 1074880790889673574}
-  _transcriptionColor: {r: 0, g: 0, b: 0, a: 1}
-  _promptColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
-  _promptDefault: Press activate to begin listening
-  _promptListening: Listening...
-  _errorColor: {r: 0.8, g: 0.2, b: 0.2, a: 1}
 --- !u!114 &1823270927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1678,7 +1661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
+  m_Color: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1687,10 +1670,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 3
     m_AlignByGeometry: 0
@@ -1707,6 +1690,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823270924}
   m_CullTransparentMesh: 1
+--- !u!114 &1823270929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823270924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a53c2b33ccace4591d51c03873b88a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _voiceServices:
+  - {fileID: 1074880790889673574}
+  _transcriptionColor: {r: 0, g: 0, b: 0, a: 1}
+  _promptColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+  _promptDefault: Press activate to begin listening
+  _promptListening: Listening...
+  _errorColor: {r: 0.8, g: 0.2, b: 0.2, a: 1}
+  isendtext: 0
+  activationButton: {fileID: 0}
 --- !u!1 &1900984724
 GameObject:
   m_ObjectHideFlags: 0

@@ -50,6 +50,12 @@ namespace Oculus.VoiceSDK.UX
         [Tooltip("Color to be used for error text")]
         [SerializeField] private Color _errorColor = new Color(0.8f, 0.2f, 0.2f);
 
+
+
+
+        public bool isendtext;
+        public Button activationButton;
+
         // If none found, grab all voice services
         private void Awake()
         {
@@ -98,6 +104,11 @@ namespace Oculus.VoiceSDK.UX
             {
                 SetText(_promptDefault, _promptColor);
             }
+
+            if (isendtext)
+            {
+                activationButton.interactable = true;
+            }
         }
         #endif
 
@@ -122,6 +133,7 @@ namespace Oculus.VoiceSDK.UX
             if (string.Equals(_label.text, _promptListening))
             {
                 SetText(_promptDefault, _promptColor);
+                print("끝났다 ~");
             }
 
             //GetComponent<TexttoSpeech>().readingEng.text = _label.text;
