@@ -1182,7 +1182,6 @@ GameObject:
   - component: {fileID: 7991105150816302419}
   - component: {fileID: 7991105150816302417}
   - component: {fileID: 7991105150816302416}
-  - component: {fileID: 7991105150816302420}
   - component: {fileID: 7991105150816302421}
   - component: {fileID: 7991105150816302422}
   m_Layer: 5
@@ -1212,25 +1211,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 700, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &7991105150816302420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7991105150816302418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dbde875e2702514fa850c0249380170, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _voiceServices:
-  - {fileID: 7991105150339129179}
-  _transcriptionColor: {r: 1, g: 1, b: 1, a: 1}
-  _promptColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
-  _promptDefault: Press activate to begin listening
-  _promptListening: Listening...
-  _errorColor: {r: 0.8, g: 0.2, b: 0.2, a: 1}
 --- !u!114 &7991105150816302421
 MonoBehaviour:
   m_ObjectHideFlags: 0

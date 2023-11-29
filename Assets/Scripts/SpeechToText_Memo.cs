@@ -128,18 +128,24 @@ namespace Oculus.VoiceSDK.UX
             SetText($"[{status}] {error}", _errorColor);
         }
         // If no text came through, show prompt
+
+
+
+
+        // ✅ 추가한 내용 !! 
+        public Button SendButton; // 외부 버튼에 대한 참조
+
         private void OnComplete(VoiceServiceRequest request)
         {
+            // print("끝났다 ~");
+            SendButton.onClick.Invoke();
+
             if (string.Equals(_label.text, _promptListening))
             {
                 SetText(_promptDefault, _promptColor);
-                print("끝났다 ~");
             }
-
-            //GetComponent<TexttoSpeech>().readingEng.text = _label.text;
-            //GetComponent<TexttoSpeech>().EngBtn();
-
         }
+
 
         // Refresh text
         private void SetText(string newText, Color newColor)

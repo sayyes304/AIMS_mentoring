@@ -7,8 +7,8 @@ namespace OpenAI
     public class ChatGPT : MonoBehaviour
     {
         // ✅ 수정한 내용 !! InputField --> Text
-        [SerializeField] private InputField inputField;
-        // [SerializeField] private Text inputField;
+        // [SerializeField] private InputField inputField;
+        [SerializeField] private Text inputField;
         [SerializeField] private Button button;
         [SerializeField] private ScrollRect scroll;
         
@@ -19,13 +19,14 @@ namespace OpenAI
         private OpenAIApi openai = new OpenAIApi();
 
         private List<ChatMessage> messages = new List<ChatMessage>();
-        private string prompt = "모든 대답을 한 문장으로만 답해줘.";
+        private string prompt = ".";
 
         private void Start()
         {
             button.onClick.AddListener(SendReply);
         }
 
+        // ✅ 이전 내용 !!
         private void AppendMessage(ChatMessage message)
         {
             scroll.content.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 0);
@@ -58,7 +59,7 @@ namespace OpenAI
 
             AppendMessage(newMessage);
 
-                  // ✅ 수정한 내용 !! 
+                  // ✅ 수정한 내용 !! - if 문 주석 처리
             // if (messages.Count == 0) newMessage.Content = prompt + "\n" + inputField.text; 
             newMessage.Content = prompt + "\n" + inputField.text; 
             
