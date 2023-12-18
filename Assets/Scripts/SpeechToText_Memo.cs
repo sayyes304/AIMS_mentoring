@@ -42,7 +42,7 @@ namespace Oculus.VoiceSDK.UX
         [Tooltip("Color to be used for prompt text")]
         [SerializeField] private Color _promptColor = new Color(0.2f, 0.2f, 0.2f);
         [Tooltip("Prompt text that displays while listening but prior to completion")]
-        [SerializeField] private string _promptDefault = "Press activate to begin listening";
+        [SerializeField] private string _promptDefault = "Press Character to begin";
         [Tooltip("Prompt text that displays while listening but prior to completion")]
         [SerializeField] private string _promptListening = "Listening...";
 

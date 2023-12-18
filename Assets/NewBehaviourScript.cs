@@ -7,19 +7,18 @@ public class NewBehaviourScript : MonoBehaviour
 {
 
     public Sprite[] sprite1;
-
+    public Button button;
     // Start is called before the first frame update
     void Start()
     {
-        
+        button.onClick.AddListener(PressBtnClose);
+        button.onClick.Invoke();
     }
 
-    // Update is called once per frame
-    void Update()
+    void PressBtnClose() // 인자가 없는 메소드
     {
-        
+        print("Hello!");
     }
-
     public void DebugMes()
     {
         print("Hello world");

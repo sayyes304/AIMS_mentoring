@@ -12,6 +12,9 @@
 /[Pp]roject[Ss]ettings/wit.config
 /[Aa]sse[Tt]s/[Oo]culus
 /[Aa]sse[Tt]s/aimswit.asset
+/[Bb]ackground/
+/[Aa]sse[Tt]s/[Bb]ackground
+/[Aa]sse[Tt]s/[Ss]amples
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
